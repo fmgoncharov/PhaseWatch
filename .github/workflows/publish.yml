@@ -13,14 +13,18 @@ name: Publish Docker image
 on: [push]
 
 jobs:
-  push_to_registry:
-    - name: Wait for tests to succeed
+  wait:
+    name: Wait for other jobs
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wait for tests to succeed
         uses: lewagon/wait-on-check-action@v1.1.1
         with:
           ref: ${{ github.ref }}
           check-name: 'lint'
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           wait-interval: 1
+  push_docker:
     name: Push Docker image to Docker Hub
     runs-on: ubuntu-latest
     steps:
