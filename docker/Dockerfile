@@ -2,8 +2,6 @@
 
 FROM python:3.8
 
-MAINTAINER Fyodor Goncharov <fngoncharov@gmail.com>
-
 WORKDIR /PhaseWatch
 
 COPY requirements.txt requirements.txt
