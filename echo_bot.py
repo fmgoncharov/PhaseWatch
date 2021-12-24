@@ -16,8 +16,7 @@ def echo_all(message):
     try:
         sizes = message.text.split()
         return bot.send_photo(
-            message.chat.id, 'https://picsum.photos/' + sizes[0] + '/' + sizes[1]
-        )
+            message.chat.id, 'https://picsum.photos/' + sizes[0] + '/' + sizes[1])
     except:
         return bot.reply_to(message, "Неправильный формат. Попробуй ещё раз")
 

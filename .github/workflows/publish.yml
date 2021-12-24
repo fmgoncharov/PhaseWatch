@@ -6,11 +6,12 @@
 name: Publish Docker image
 
 
-# Очевидно, надо доработать (учитывать тэги)
-#on:
-#  release:
-#    types: [published]
-on: [push]
+# Проверить
+on:
+  release:
+    types: [published]
+  created:
+    ref_type: [tag]
 
 jobs:
   push_to_registries:
@@ -21,12 +22,12 @@ jobs:
       contents: read
     steps:
 
-      #- name: Wait for tests to succeed
-      #      uses: lewagon/wait-on-check-action@v1.1.1
-      #      with:
-      #        ref: ${{ github.ref }}
-      #        check-name: 'lint'
-      #        repo-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Wait for tests to succeed
+            uses: lewagon/wait-on-check-action@v1.1.1
+            with:
+              ref: ${{ github.ref }}
+              check-name: 'lint'
+              repo-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Check out the repo
         uses: actions/checkout@v2
 
