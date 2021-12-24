@@ -22,11 +22,11 @@ jobs:
       contents: read
     steps:
       - name: Wait for tests to succeed
-          uses: lewagon/wait-on-check-action@v1.1.1
-          with:
-            ref: ${{ github.ref }}
-            check-name: 'lint'
-            repo-token: ${{ secrets.GITHUB_TOKEN }}
+        uses: lewagon/wait-on-check-action@v1.1.1
+        with:
+          ref: ${{ github.ref }}
+          check-name: 'lint'
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Check out the repo
         uses: actions/checkout@v2
