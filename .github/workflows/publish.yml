@@ -2,6 +2,8 @@ name: Publish Docker image
 
 # Проверить
 on:
+  push:
+    branches: [main]
   release:
     types: [published]
   create:
