@@ -10,7 +10,7 @@ name: Publish Docker image
 on:
   release:
     types: [published]
-  created:
+  create:
     ref_type: [tag]
 
 jobs:
