@@ -2,7 +2,7 @@ version: '3'
 
 services:
   phase_watch:
-    image: fmgoncharov/ec2-phase_watch
+    image: fmgoncharov/ec2-phase_watch:final
     labels:
       - "com.centurylinklabs.watchtower.scope=myscope"
     environment:
