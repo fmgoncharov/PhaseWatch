@@ -7,7 +7,7 @@ bot = telebot.TeleBot(os.environ["BOT_TOKEN"])
 @bot.message_handler(commands=["start", "help"])
 def send_welcome(message):
     return bot.reply_to(
-        message, "Напиши мне размеры картинки через пробел. \n Например, 400 400"
+        message, "Напишите мне размеры картинки через пробел. \nНапример, 2000 2000"
     )
 
 
@@ -15,10 +15,16 @@ def send_welcome(message):
 def echo_all(message):
     try:
         sizes = message.text.split()
+        if len(sizes) != 2:
+            raise IndexError
+        if not (sizes[0].isdecimal() and sizes[1].isdecimal()):
+            raise SyntaxError
         return bot.send_photo(
             message.chat.id, 'https://picsum.photos/' + sizes[0] + '/' + sizes[1])
-    except:
-        return bot.reply_to(message, "Неправильный формат. Попробуй ещё раз")
+    except IndexError:
+        return bot.reply_to(message, "Неправильный формат. Введите ДВА числа")
+    except SyntaxError:
+        return bot.reply_to(message, "Неправильный формат. Введите два ЧИСЛА")
 
 
 bot.infinity_polling()
