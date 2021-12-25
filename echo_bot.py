@@ -30,7 +30,9 @@ def echo_all(message):
     except SyntaxError:
         return bot.reply_to(message, "Неправильный формат. Введите два ЧИСЛА")
     except ValueError:
-        return bot.reply_to(message, "Неправильный формат. Введите два числа из отрезка [1; 5000]")
+        return bot.reply_to(
+            message, "Неправильный формат. Введите два числа из отрезка [1; 5000]"
+        )
 
 
 bot.infinity_polling()
