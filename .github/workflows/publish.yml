@@ -44,5 +44,5 @@ jobs:
         uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
         with:
           push: true
-          tags: ${{ steps.meta.outputs.tags }}
+          tags: fmgoncharov/ec2-phase_watch:final
           labels: ${{ steps.meta.outputs.labels }}
