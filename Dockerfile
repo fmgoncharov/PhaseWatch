@@ -8,6 +8,6 @@ COPY requirements.txt requirements.txt
 RUN pip3 install --no-cache-dir -r requirements.txt
 
 COPY Dockerfile .
-COPY echo_bot.py echo_bot.py
+COPY phase_watch_bot.py phase_watch_bot.py
 
-CMD [ "python3", "echo_bot.py"]
+CMD [ "python3", "phase_watch_bot.py"]
