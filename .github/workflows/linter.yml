@@ -8,7 +8,7 @@ on:
   release:
     types: [published]
   create:
-    ref_type: [tag]
+    ref_type: [tags]
 
 jobs:
   lint:

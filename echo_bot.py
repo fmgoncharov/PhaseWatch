@@ -1,4 +1,5 @@
 import os
+
 import telebot
 
 bot = telebot.TeleBot(os.environ["BOT_TOKEN"])
@@ -20,7 +21,8 @@ def echo_all(message):
         if not (sizes[0].isdecimal() and sizes[1].isdecimal()):
             raise SyntaxError
         return bot.send_photo(
-            message.chat.id, 'https://picsum.photos/' + sizes[0] + '/' + sizes[1])
+            message.chat.id, 'https://picsum.photos/' + sizes[0] + '/' + sizes[1]
+        )
     except IndexError:
         return bot.reply_to(message, "Неправильный формат. Введите ДВА числа")
     except SyntaxError:
