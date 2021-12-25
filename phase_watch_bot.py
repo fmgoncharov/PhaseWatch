@@ -26,7 +26,14 @@ def echo_all(message):
         int(sizes[1].isdecimal())
         if not (0 < int(sizes[0]) <= 5000 and 0 < int(sizes[1]) <= 5000):
             raise ValueError
-        address = "https://picsum.photos/" + sizes[0] + "/" + sizes[1] + "?random=" + str(randint(1, 1000))
+        address = (
+                "https://picsum.photos/"
+                + sizes[0]
+                + "/"
+                + sizes[1]
+                + "?random="
+                + str(randint(1, 1000))
+        )
         return bot.send_photo(message.chat.id, address)
     except IndexError:
         return bot.reply_to(message, "Неправильный формат. Введите ДВА числа")
