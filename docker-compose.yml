@@ -1,8 +1,8 @@
 version: '3'
 
 services:
-  balaboba:
-    image: fmgoncharov/ec2-balaboba
+  phase_watch:
+    image: fmgoncharov/ec2-phase_watch
     labels:
       - "com.centurylinklabs.watchtower.scope=myscope"
     environment:
