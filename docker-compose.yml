@@ -5,6 +5,8 @@ services:
     image: fmgoncharov/ec2-balaboba
     labels:
       - "com.centurylinklabs.watchtower.scope=myscope"
+    environment:
+      BOT_TOKEN: "${BOT_TOK}"
 
   watchtower:
     image: containrrr/watchtower
