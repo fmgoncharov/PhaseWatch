@@ -5,7 +5,7 @@ on:
   release:
     types: [published]
   create:
-    ref_type: [tag]
+    types: [tag]
 
 jobs:
   push_to_registries:
