@@ -4,8 +4,6 @@ name: Publish Docker image
 on:
   release:
     types: [published]
-  create:
-    types: [tag]
 
 jobs:
   push_to_registries:
