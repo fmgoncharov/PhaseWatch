@@ -1,6 +1,5 @@
 name: Publish Docker image
 
-# Проверить
 on:
   release:
     types: [published]
