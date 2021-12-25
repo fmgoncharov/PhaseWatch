@@ -27,12 +27,12 @@ def echo_all(message):
         if not (0 < int(sizes[0]) <= 5000 and 0 < int(sizes[1]) <= 5000):
             raise ValueError
         address = (
-                "https://picsum.photos/"
-                + sizes[0]
-                + "/"
-                + sizes[1]
-                + "?random="
-                + str(randint(1, 1000))
+            "https://picsum.photos/"
+            + sizes[0]
+            + "/"
+            + sizes[1]
+            + "?random="
+            + str(randint(1, 1000))
         )
         return bot.send_photo(message.chat.id, address)
     except IndexError:
